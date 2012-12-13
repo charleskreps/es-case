@@ -15,7 +15,7 @@ It really doesn't do much yet...currently you can:
 Case Class Usage
 ----------------
 
-In elasticsearch, each document is a member of some "type".  A type's definition includes things like it's mapping (how the documents fields should be interpreted).  With es-case the same concepts can be expressed using case classes and companion objects:
+In elasticsearch, each document is a member of some "type".  A type's definition includes things like it's mapping, i.e., how a document's fields should be interpreted.  With es-case the same concepts can be expressed using case classes and companion objects:
 * document = case class
 * type = companion object
 * mapping = companion object's mapping field
@@ -34,7 +34,7 @@ To work with es-case the case class needs to extend the `Doc` trait and it's com
     case class Author(id:String, name:String) extends Doc
 
 ### The Operations
-Methods that operate on types will typically take the companion object instance as a parameter.  Methods operating on document instances use case class instances as type parameters or arguments.  Also, whenever possible, methods are defined directly on case class instances, e.g., a document instance can be created by calling the `post` method on the case class instance representing it.  To illustrate here's an example using Comment and Author that creates an index with type mappings, inserts some documents, and then deletes everything on a locally running Elasticsearch instance:
+Methods that operate on types will typically take the companion object instance as a parameter.  Methods operating on document instances use case class instances as type parameters or arguments.  Also, whenever possible, methods are defined directly on case class instances, e.g., a document instance can be created by calling the `post` method on the case class instance representing it.  To illustrate here's an example using `Comment` and `Author` that creates an index with type mappings, inserts some documents, and then deletes everything on a locally running Elasticsearch instance:
 
     import org.ckreps.escase.Elasticsearch
 
