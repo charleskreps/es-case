@@ -11,6 +11,7 @@ It really doesn't do much yet...currently you can:
 * Create type mappings.
 * Create, read and update "flat" case classes with Strings and primitives.
 
+
 Case Class Usage
 ----------------
 
@@ -33,6 +34,8 @@ Currently to work with es-case both the case class and it's companion need to ex
 
 
 Methods that operate on types will typically take the companion object instance as a parameter.  Methods operating on document instances use case class instances as type parameters or arguments.  Also, whenever possible, methods are defined directly on case class instances, e.g., a document instance can be created by calling the `post` method on the case class instance representing it.  To illustrate here's an example using Comment and Author that creates an index, type mappings, inserts some documents, and then deletes everything on a locally running Elasticsearch instance:
+
+    import org.ckreps.escase.Elasticsearch
 
     val authors = List(
       Author("3", "Walt Whitman"),
@@ -61,6 +64,26 @@ TODO
 * Start on a query abstraction (maybe a DSL).  Lots to do here.
 * Bulk CRUD operations.
 * Cluster-level operations (health checks, metadata, etc)
+
+License
+=======
+
+    This software is licensed under the Apache 2 license, quoted below.
+
+    Copyright 2012 Charles Kreps
+
+    Licensed under the Apache License, Version 2.0 (the "License"); you may not
+    use this file except in compliance with the License. You may obtain a copy of
+    the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+    WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+    License for the specific language governing permissions and limitations under
+    the License.
+
 
 
 
